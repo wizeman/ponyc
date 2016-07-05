@@ -21,7 +21,7 @@ class iso _TestStdinStdout is UnitTest
     let notifier: ProcessNotify iso = _ProcessClient("one, two, three",
       "", 0, h)
     try
-      let path = FilePath(h.env.root as AmbientAuth, "/bin/cat")
+      let path = FilePath(h.env.root as AmbientAuth, "/nix/store/jxqj2iqgig5cij7mr85wx08wvyf0s3sm-coreutils-8.25/bin/cat")
       let args: Array[String] iso = recover Array[String](1) end
       args.push("cat")
       let vars: Array[String] iso = recover Array[String](2) end
@@ -48,7 +48,7 @@ class iso _TestStderr is UnitTest
     let notifier: ProcessNotify iso = _ProcessClient("",
       "cat: file_does_not_exist: No such file or directory\n", 1, h)
     try
-      let path = FilePath(h.env.root as AmbientAuth, "/bin/cat")
+      let path = FilePath(h.env.root as AmbientAuth, "/nix/store/jxqj2iqgig5cij7mr85wx08wvyf0s3sm-coreutils-8.25/bin/cat")
       let args: Array[String] iso = recover Array[String](2) end
       args.push("cat")
       args.push("file_does_not_exist")
